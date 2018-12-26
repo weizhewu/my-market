@@ -38,14 +38,14 @@ public interface TicketDAO {
      */
     Entity getTicketById(long id) throws SQLException;
 
+    Entity getTicketByDate(Date date) throws SQLException;
+
     /**
      * 根据日期查小票
      * @param date
      * @return
      * @throws SQLException
      */
-    Entity getTicketByDate(Date date) throws SQLException;
-
     Entity getTicketByDate(int date) throws SQLException;
 
     /**

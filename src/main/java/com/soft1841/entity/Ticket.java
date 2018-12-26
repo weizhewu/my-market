@@ -2,6 +2,7 @@ package com.soft1841.entity;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,7 +14,7 @@ public class Ticket {
     private final SimpleDoubleProperty count = new SimpleDoubleProperty();
     private final SimpleLongProperty barcode = new SimpleLongProperty();
     private final SimpleDoubleProperty number = new SimpleDoubleProperty();
-    private final SimpleDateFormat date = new SimpleDateFormat();
+    private final SimpleStringProperty date = new SimpleStringProperty();
 
     public Ticket() {
     }
@@ -90,8 +91,16 @@ public class Ticket {
         this.number.set(number);
     }
 
-    public SimpleDateFormat getDate() {
+    public String getDate() {
+        return date.get();
+    }
+
+    public SimpleStringProperty dateProperty() {
         return date;
+    }
+
+    public void setDate(String date) {
+        this.date.set(date);
     }
 
     @Override

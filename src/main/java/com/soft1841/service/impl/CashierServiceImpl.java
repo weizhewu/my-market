@@ -20,7 +20,7 @@ public class CashierServiceImpl  implements CashierService {
         try {
             seller = sellerDAO.getCashierByNumber(number);
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("无此账号");
         }
         //根据工号查找成功
         if (seller != null) {
@@ -31,5 +31,10 @@ public class CashierServiceImpl  implements CashierService {
         }
         return false;
 
+    }
+
+    @Override
+    public Cashier getCashier(String number) {
+        return null;
     }
 }

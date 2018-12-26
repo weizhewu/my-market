@@ -10,6 +10,9 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.soft1841.controller.GoodsController"
             prefHeight="400.0" prefWidth="600.0">
-    <Label text="商品管理"/>
+    <FlowPane fx:id="goodsPane" hgap="30" vgap="10"
+              AnchorPane.topAnchor="100"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20"/>
 
 </AnchorPane>

@@ -19,8 +19,11 @@ public class CashierDAOImpl implements CashierDAO {
         return convertSeller(entity);
     }
     private Cashier convertSeller(Entity entity){
-        Cashier cashier = new Cashier(entity.getLong("id"),entity.getStr("number"),
-                entity.getStr("name"),entity.getStr("password"),entity.getStr("picture"));
+        Cashier cashier = new Cashier(entity.getLong("id"),
+                entity.getStr("number"),
+                entity.getStr("name"),
+                entity.getStr("password"),
+                entity.getStr("picture"));
         return cashier;
     }
 }

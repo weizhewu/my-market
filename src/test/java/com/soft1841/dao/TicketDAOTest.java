@@ -18,16 +18,17 @@ public class TicketDAOTest {
     ticketDAO.deleteTicketById(10);
     }
 
-//    增加测试(时间不能手动输入，需要获取当前时间)
+//    增加测试(时间无法输入)
     @Test
     public void insertTicket() throws SQLException{
         Ticket ticket = new Ticket();
         ticket.setCashierId(1);
-        ticket.setTicketId(16);
+        ticket.setTicketId(17);
         ticket.setCount(554);
         ticket.setVipId(1213);
         ticket.setBarcode(3153);
         ticket.setNumber(12);
+        ticket.setDate(String.valueOf(2018-12-12));
         System.out.println(ticketDAO.insertTicket(ticket));
     }
 
