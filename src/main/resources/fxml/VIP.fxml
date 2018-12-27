@@ -5,6 +5,4 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane>
-
-</BorderPane>
+<BorderPane></BorderPane>

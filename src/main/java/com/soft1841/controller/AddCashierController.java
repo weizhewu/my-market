@@ -1,5 +1,6 @@
 package com.soft1841.controller;
 
+import cn.hutool.setting.dialect.Props;
 import com.soft1841.dao.CashierDAO;
 import com.soft1841.entity.Cashier;
 import com.soft1841.utils.DAOFactory;
@@ -20,6 +21,7 @@ import java.util.ResourceBundle;
 public class AddCashierController implements Initializable {
     private ObservableList<Cashier> cashierData = FXCollections.observableArrayList();
     private String title;
+    private Props entity;
 
     public ObservableList<Cashier> getCashierData() {return cashierData;}
 
@@ -43,7 +45,7 @@ public class AddCashierController implements Initializable {
         String name = cashierName.getText();
         String number = cashierNumber.getText();
         String password = cashierPassword.getText();
-        Cashier cashier = new Cashier();
+        Cashier cashier = new Cashier(entity.getLong("id"), entity.getStr("number"), entity.getStr("name"), entity.getStr("password"), entity.getStr("picture"));
         cashier.setName(name);
         cashier.setNumber(number);
         cashier.setPassword(password);

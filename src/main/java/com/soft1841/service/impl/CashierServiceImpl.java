@@ -8,7 +8,6 @@ import com.soft1841.utils.DAOFactory;
 import java.sql.SQLException;
 
 /**
- * @zhouguoqing
  * 2018.12.24
  */
 public class CashierServiceImpl  implements CashierService {
@@ -30,7 +29,6 @@ public class CashierServiceImpl  implements CashierService {
             }
         }
         return false;
-
     }
 
     @Override

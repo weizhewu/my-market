@@ -81,7 +81,7 @@ public class GoodsController implements Initializable {
             Label discriptionLabel = new Label(entity.getStr("discription"));
             Button delButton = new Button("删除");
             delButton.getStyleClass().addAll("orange-button");
-            delButton.setPrefSize(80, 80);
+            delButton.setPrefSize(80, 100);
             rightBox.getChildren().addAll(nameLabel, idLabel,type_idLabel,priceLabel,stockLabel,discriptionLabel, delButton);
             hBox.getChildren().add(leftBox);
             hBox.getChildren().add(rightBox);

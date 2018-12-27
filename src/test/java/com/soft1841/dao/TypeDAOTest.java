@@ -39,6 +39,4 @@ public class TypeDAOTest {
         Entity entity = typeDAO.getTypeById(3);
         System.out.println(entity);
     }
-
-
 }

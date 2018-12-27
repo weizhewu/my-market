@@ -8,7 +8,6 @@ import com.soft1841.entity.Cashier;
 import java.sql.SQLException;
 
 /**
- * @tianzhen
  * 2018.12.24
  */
 public class CashierDAOImpl implements CashierDAO {
@@ -25,8 +24,11 @@ public class CashierDAOImpl implements CashierDAO {
     }
 
     private Cashier convertSeller(Entity entity){
-        Cashier cashier = new Cashier(entity.getLong("id"),entity.getStr("number"),
-                entity.getStr("name"),entity.getStr("password"),entity.getStr("picture"));
+        Cashier cashier = new Cashier(entity.getLong("id"),
+                entity.getStr("number"),
+                entity.getStr("name"),
+                entity.getStr("password"),
+                entity.getStr("picture"));
         return cashier;
     }
 }

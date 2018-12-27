@@ -19,7 +19,7 @@
         <TextField promptText="请输入关键词" fx:id="keywordsField"/>
         <Button  text="搜索" styleClass="blue-word"/>
     </HBox>
-    <TableView fx:id="bookTable" prefWidth="1000"
+    <TableView fx:id="cashierTable" prefWidth="1000"
                AnchorPane.topAnchor="110" AnchorPane.leftAnchor="10">
         <columns>
             <TableColumn text="ID">
