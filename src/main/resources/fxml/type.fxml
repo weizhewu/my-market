@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.soft1841.controller.TypeController"
-            prefHeight="400.0" prefWidth="600.0">
-    <Label text="商品类管理"/>
-
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.soft1841.controller.TypeController">
+      <Button mnemonicParsing="false" styleClass="blue-background" text="添加商品类别"
+              AnchorPane.leftAnchor="20" AnchorPane.topAnchor="20"  onMouseClicked="#addType"/>
+    <TableView fx:id="typeTable" layoutX="6.0" layoutY="64.0" prefWidth="700"
+               AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="64.0">
+        <columns>
+            <!--ID列-->
+            <TableColumn prefWidth="181.0" text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <!--类别名称列-->
+            <TableColumn prefWidth="276.0" text="类别名称">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
 </AnchorPane>

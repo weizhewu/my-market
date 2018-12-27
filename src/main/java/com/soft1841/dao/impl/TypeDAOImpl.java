@@ -2,8 +2,8 @@ package com.soft1841.dao.impl;
 
 import cn.hutool.db.Db;
 import cn.hutool.db.Entity;
-import com.soft1841.entity.Type;
 import com.soft1841.dao.TypeDAO;
+import com.soft1841.entity.Type;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,14 +18,19 @@ public class TypeDAOImpl implements TypeDAO {
     }
 
     @Override
-    public int deleteType (long id) throws SQLException {
+    public int deleteTypeById(long id) throws SQLException {
+        return 0;
+    }
+
+    @Override
+    public int deleteType(long id) throws SQLException {
         return Db.use().del(
                 Entity.create("t_type").set("id", id)
         );
     }
 
     @Override
-    public List <Entity> selectAllTypes () throws SQLException {
+    public List<Entity> selectAllTypes () throws SQLException {
         //1.采用默认的查询
         //return Db.use().findAll("t_type");
         //2.采用自定义查询语句查询
@@ -33,7 +38,12 @@ public class TypeDAOImpl implements TypeDAO {
     }
 
     @Override
-    public Entity getTypeById (int id) throws SQLException {
+    public Type getTypeById(long id) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Entity getTypeById(int id) throws SQLException {
 //采用自定义带参查询语句，返回单个实体
         return Db.use().queryOne("SELECT * FROM t_type WHERE id = ? ", id);
     }

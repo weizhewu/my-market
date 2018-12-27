@@ -15,6 +15,10 @@ public class Cashier {
         this.varchar = varchar;
     }
 
+    public Cashier() {
+
+    }
+
     public Long getId () {
         return id;
     }
@@ -53,5 +57,9 @@ public class Cashier {
 
     public void setVarchar (String varchar) {
         this.varchar = varchar;
+    }
+
+    public void setId(Integer id) {
+
     }
 }

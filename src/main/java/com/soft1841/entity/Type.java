@@ -7,6 +7,7 @@ public class Type {
     //以JavaFX属性绑定的形式，定义和数据表字段id和type_name对应的属性，注意命名规范
     private final SimpleLongProperty typeId = new SimpleLongProperty();
     private final SimpleStringProperty typeName = new SimpleStringProperty("");
+    private long id;
 
     public Type() {
     }
@@ -43,5 +44,13 @@ public class Type {
     @Override
     public String toString() {
         return typeName.get();
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 }

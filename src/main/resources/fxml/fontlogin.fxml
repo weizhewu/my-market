@@ -5,7 +5,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <!--前台登录界面-->
-<!--@author 岳凡-->
 <!--2018.12.25-->
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"

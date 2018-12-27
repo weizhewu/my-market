@@ -5,7 +5,7 @@ import com.soft1841.dao.impl.*;
 
 public class DAOFactory {
 
-    public static TypeDAO getTypeDAOInstance() {
+    public static TypeDAOImpl getTypeDAOInstance() {
         return new TypeDAOImpl();
     }
     public static CashierDAO getCashierDAOInstance() {

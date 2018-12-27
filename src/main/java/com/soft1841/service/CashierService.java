@@ -2,8 +2,6 @@ package com.soft1841.service;
 
 import com.soft1841.entity.Cashier;
 
-import java.util.List;
-
 public interface CashierService  {
     /**
      * @zhouguoqing
