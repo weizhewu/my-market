@@ -26,6 +26,7 @@ public class CashiersController implements Initializable {
     private ObservableList<Cashier> cashierData=FXCollections.observableArrayList();
     private List<Entity> cashierList = null;
     private CashierDAO cashierDAO = DAOFactory.getCashierDAOInstance();
+    @FXML
     private TextField keywordsField;
     private ObservableList<Cashier> cashiersData;
 

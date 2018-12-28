@@ -49,6 +49,7 @@ public class TypeServiceImpl implements TypeService {
         }
         return result;
     }
+
     @Override
     public void deleteType (long id) {
         try {

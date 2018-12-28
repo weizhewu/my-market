@@ -45,7 +45,7 @@ public class GoodsController implements Initializable {
         showGoods(goodsList);
     }
 
-    //通过循环遍历readerList集合，创建HBox来显示每个读者信息
+    //通过循环遍历goodsList集合，创建HBox来显示每个商品信息
     private void showGoods(List<Entity> goodsList) {
         ObservableList<Node> observableList = goodsPane.getChildren();
         goodsPane.getChildren().removeAll(observableList);
@@ -54,7 +54,7 @@ public class GoodsController implements Initializable {
             hBox.setPrefSize(320, 280);
             hBox.setSpacing(10);
             hBox.setPadding(new Insets(10, 10, 10, 10));
-            //创建左侧的垂直布局,用来放头像和角色
+
             VBox leftBox = new VBox();
             leftBox.setSpacing(30);
             leftBox.setPadding(new Insets(20, 10, 10, 10));
@@ -86,25 +86,6 @@ public class GoodsController implements Initializable {
             hBox.getChildren().add(leftBox);
             hBox.getChildren().add(rightBox);
             goodsPane.getChildren().add(hBox);
-            delButton.setOnAction(event -> {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("确认对话框");
-                alert.setHeaderText("请确认");
-                alert.setContentText("确定要删除这行记录吗?");
-                Optional<ButtonType> result = alert.showAndWait();
-                //点击了确认按钮，执行删除操作，同时移除一行模型数据
-                if (result.get() == ButtonType.OK) {
-                    //点击删除按钮做的事件，得到这个人的ID
-                    try {
-                        long id = entity.getLong("id");
-                        goodsDAO.deleteGoodsById(2);
-                        //从流式面板移除当前这个人的数据
-                        goodsPane.getChildren().remove(hBox);
-                    } catch (SQLException e) {
-                        System.err.println("删除有误");
-                    }
-                }
-            });
         }
     }
 }

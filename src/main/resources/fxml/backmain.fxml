@@ -21,10 +21,10 @@
                 <!--风琴面板-->
                 <Accordion>
                     <panes>
-                        <TitledPane alignment="CENTER" text="库存管理">
+                        <TitledPane alignment="CENTER" text="商品管理">
                             <VBox prefWidth="200" spacing="5" styleClass="blue-background">
                                 <Button text="前台订单" styleClass="blue-button-shout" onAction="#frontDesk"/>
-                                <Button text="商品管理" styleClass="blue-button-shout" onAction="#ListGoods"/>
+                                <Button text="商品信息" styleClass="blue-button-shout" onAction="#ListGoods"/>
                                 <Button text="商品类管理" styleClass="blue-button-shout" onAction="#ListType"/>
                             </VBox>
                         </TitledPane>

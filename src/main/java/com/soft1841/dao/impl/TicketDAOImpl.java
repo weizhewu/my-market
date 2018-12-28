@@ -27,7 +27,6 @@ public class TicketDAOImpl implements TicketDAO {
                         .set("cashier_id",ticket.getCashierId())
                         .set("number",ticket.getNumber())
                         .set("count",ticket.getCount())
-
         );
     }
 
