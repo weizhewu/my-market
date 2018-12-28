@@ -24,8 +24,5 @@ public class DAOFactory {
         return new DetailDAOImpl();
     }
 
-
-
-
 }
 
