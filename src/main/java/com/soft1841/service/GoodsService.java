@@ -11,7 +11,12 @@ public interface GoodsService {
      * 查询所有商品
      * @return
      */
-    List<GoodsDAO>selectAllGoods();
+    List<Goods>selectAllGoods();
+    /**
+     * 查询所有商品信息
+     * @return List<Reader>
+     */
+    List<Goods> getAllGoods();
 
     /**
      * 增加商品
@@ -26,6 +31,12 @@ public interface GoodsService {
      * @return
      */
     Goods getGoodById(long id);
+    /**
+     * 根据id删除商品
+     * @param id
+     * @return
+     */
+    void deleteGoods(long id);
 
 
 }

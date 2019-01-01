@@ -8,7 +8,7 @@ import com.soft1841.entity.Goods;
 import java.sql.SQLException;
 import java.util.List;
 
-public class GoodsDAOImpl implements GoodsDAO {
+public  class GoodsDAOImpl implements GoodsDAO {
     @Override
     public List<Object> insertGoods(Goods goods) throws SQLException {
         return Db.use().insertForGeneratedKeys(
@@ -42,8 +42,9 @@ public class GoodsDAOImpl implements GoodsDAO {
 
     @Override
     public List<Entity> selectAllGoods() throws SQLException {
-        return Db.use().query("SELECT * FROM t_goods ");
+        return Db.use().query("SELECT * FROM t_goods");
     }
+
 
     @Override
     public Entity getGoodById(long id) throws SQLException {

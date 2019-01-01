@@ -23,6 +23,9 @@ public class BackMainController implements Initializable {
 
     }
     //显示默认主页数据
+    public void listDefault() throws Exception {
+        switchView("default.fxml");
+    }
 
     public void frontDesk() throws Exception{
         switchView("frontDesk.fxml");

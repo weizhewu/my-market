@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.net.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<BorderPane></BorderPane>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.soft1841.controller.VIPController">
+    <!--表格视图，用来显示数据库中查询到的图书类别-->
+    <TableView fx:id="vipTable" prefWidth="700"
+               AnchorPane.leftAnchor="20" AnchorPane.topAnchor="50">
+        <columns>
+            <!--ID列-->
+            <TableColumn text="ID">
+                <!--绑定实体类中的id属性-->
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <!--类别名称列-->
+            <TableColumn text="会员名字">
+                <!--绑定实体类中的typeName属性-->
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="会员号">
+                <!--绑定实体类中的typeName属性-->
+                <cellValueFactory>
+                    <PropertyValueFactory property="number"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="会员地址">
+                <!--绑定实体类中的typeName属性-->
+                <cellValueFactory>
+                    <PropertyValueFactory property="place"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="手机号码">
+                <!--绑定实体类中的typeName属性-->
+                <cellValueFactory>
+                    <PropertyValueFactory property="phonenumber"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</AnchorPane>
+

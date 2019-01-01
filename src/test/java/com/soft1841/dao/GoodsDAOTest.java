@@ -36,10 +36,10 @@ public class GoodsDAOTest {
         goodsDAO.insertGoods(goods);
    }
 
-//    所有物品查询测试
+//    所有物品关键词查询测试
     @Test
-    public void selectAllGoods() throws SQLException {
-        List<Entity> goodsList = goodsDAO.selectAllGoods();
+    public void selectGoodsLike() throws SQLException {
+        List<Entity> goodsList = goodsDAO.selectGoodsLike("");
         System.out.println(goodsList);
     }
 

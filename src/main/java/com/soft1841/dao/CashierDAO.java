@@ -1,8 +1,10 @@
 package com.soft1841.dao;
 
+import cn.hutool.db.Entity;
 import com.soft1841.entity.Cashier;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @tianzhen
@@ -20,4 +22,6 @@ public interface CashierDAO {
    Cashier getCashierByNumber(String number) throws SQLException;
 
     long inserCashier(Cashier cashier) throws SQLException;
+
+    List<Entity> selectAllCashiers() throws SQLException;
 }

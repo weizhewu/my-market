@@ -108,6 +108,22 @@
     -fx-pref-width: 250px;
     -fx-text-fill: rgb(233, 233, 233);
 }
+.warning-theme{
+    -fx-background-color: rgb(254, 87, 34);
+    -fx-text-fill: #fff;
+}
+.button{
+    -fx-background-color: rgb(242, 242, 242);
+    -fx-text-fill: rgb(132, 129, 129);
+    -fx-font-size: 15;
 
+}
+.font{
+    -fx-font-size: 18;
+    -fx-text-fill: rgb(60, 60, 60);
+}
+.label{
+    -fx-font-size: 18;
+}
 
 

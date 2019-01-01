@@ -6,6 +6,7 @@ import com.soft1841.dao.CashierDAO;
 import com.soft1841.entity.Cashier;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * 2018.12.24
@@ -21,6 +22,11 @@ public class CashierDAOImpl implements CashierDAO {
     @Override
     public long inserCashier (Cashier cashier) throws SQLException {
         return 0;
+    }
+
+    @Override
+    public List<Entity> selectAllCashiers() throws SQLException {
+       return Db.use().query("SELECT * FROM t_goods ");
     }
 
     private Cashier convertSeller(Entity entity){

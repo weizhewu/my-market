@@ -15,4 +15,7 @@ public class CashierDAOTest {
         System.out.println(entity);
     }
 
+    @Test
+    public void selectAllCashiers() {
+    }
 }

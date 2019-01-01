@@ -21,6 +21,7 @@
             <CheckBox text="记住密码" AnchorPane.leftAnchor="0" styleClass="blue-word"/>
             <Label text="忘记密码" AnchorPane.rightAnchor="0" styleClass="blue-word"/>
         </AnchorPane>
+        <Button text="请输入验证码" onAction="#timeTimer"/>
         <Button prefWidth="400"  text="登录" styleClass="blue-button-long" onAction="#login"/>
     </VBox>
 </AnchorPane>

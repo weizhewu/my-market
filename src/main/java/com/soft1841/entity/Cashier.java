@@ -12,6 +12,10 @@ public class Cashier {
     public Cashier(Long id, String number, String name, String password, String picture) {
     }
 
+    public Cashier() {
+
+    }
+
     public long getId() {
         return id.get();
     }

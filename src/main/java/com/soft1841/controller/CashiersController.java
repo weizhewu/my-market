@@ -6,6 +6,7 @@ import com.soft1841.entity.Cashier;
 import com.soft1841.utils.DAOFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,7 +47,7 @@ public class CashiersController implements Initializable {
         addCashierStage.setScene(scene);
         addCashierStage.show();
     }
-    private void showCashierData(List<Entity>cashierList) {
+    public void showCashierData(List<Entity>cashierList) {
         //遍历实体集合
         for (Entity entity : cashierList) {
             //取出属性，创建Type的对象
@@ -80,6 +81,10 @@ public class CashiersController implements Initializable {
 
     public void setCashiersData(ObservableList<Cashier> cashiersData) {
         this.cashiersData = cashiersData;
+    }
+
+
+    public void addCashier(ActionEvent actionEvent) {
     }
 }
 
