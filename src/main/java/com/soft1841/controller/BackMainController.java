@@ -1,9 +1,12 @@
 package com.soft1841.controller;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
@@ -18,8 +21,44 @@ import java.util.ResourceBundle;
 public class BackMainController implements Initializable {
     @FXML
     private StackPane backMainContainer;
+    @FXML
+    private ImageView goodImg;
+    //轮播图资源数组
+    String[] imgPath = {"1.png","3.png","5.png","8.png","10.png"};
     @Override
     public void initialize (URL location, ResourceBundle resources) {
+
+        //新建一个线程，用来轮播
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    //循环读取图片数组
+                    for (int i = 0; i < imgPath.length; i++) {
+                        //用每个资源创建一个图片对象
+                        Image image = new Image("/img/" + imgPath[i]);
+                        //开启一个UI线程
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                //将创建的Image对象设置给ImageView
+                                goodImg.setImage(image);
+                            }
+                        });
+                        try {
+                            //休眠2秒
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        //轮播到最后一张图的时候，回到第一张重新播放
+                        if (i == imgPath.length - 1) {
+                            i = 0;
+                        }
+                    }
+                }
+            }
+        }).start();
 
     }
     //显示默认主页数据
@@ -76,4 +115,7 @@ public class BackMainController implements Initializable {
         AnchorPane anchorPane = new FXMLLoader(getClass().getResource("/fxml/" + fileName)).load();
         backMainContainer.getChildren().add(anchorPane);
     }
+
+
+
 }

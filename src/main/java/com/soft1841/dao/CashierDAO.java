@@ -1,6 +1,5 @@
 package com.soft1841.dao;
 
-import cn.hutool.db.Entity;
 import com.soft1841.entity.Cashier;
 
 import java.sql.SQLException;
@@ -19,9 +18,42 @@ public interface CashierDAO {
      * @return
      * @throws SQLException
      */
-   Cashier getCashierByNumber(String number) throws SQLException;
+    Cashier getCashierByNumber(String number)throws SQLException;
 
-    long inserCashier(Cashier cashier) throws SQLException;
+    Cashier getCashierById(long id) throws SQLException;
 
-    List<Entity> selectAllCashiers() throws SQLException;
+    /**
+     * 查所有
+     * @param
+     * @return
+     * @throws SQLException
+     */
+    List<Cashier> selectAllCashier() throws SQLException;
+
+    /**
+     * 增加cashier
+     * @param cashier
+     * @return
+     * @throws SQLException
+     */
+
+    Long insertCashier(Cashier cashier) throws SQLException;
+
+    /**
+     * 删除收银员
+     * @param id
+     * @return
+     * @throws SQLException
+     */
+    int deleteCashierById(long id) throws SQLException;
+
+    /**
+     * 关键词查询
+     * @param keywords
+     * @return
+     * @throws SQLException
+     */
+    List<Cashier> selectLikeName(String keywords) throws SQLException;
+
+
 }

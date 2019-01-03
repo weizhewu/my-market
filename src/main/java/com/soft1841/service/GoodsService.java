@@ -1,42 +1,69 @@
 package com.soft1841.service;
 
-import com.soft1841.dao.GoodsDAO;
+
 import com.soft1841.entity.Goods;
 
 import java.util.List;
 
-public interface GoodsService {
 
+public interface GoodsService  {
     /**
-     * 查询所有商品
-     * @return
-     */
-    List<Goods>selectAllGoods();
-    /**
-     * 查询所有商品信息
-     * @return List<Reader>
-     */
-    List<Goods> getAllGoods();
-
-    /**
-     * 增加商品
+     * 新增商品，返回自增主键
      * @param goods
      * @return
      */
-    Long insertGoods(Goods goods);
+    Long addGoods (Goods goods);
 
-    /**
-     * 根据id查询商品信息
-     * @param id
-     * @return
-     */
-    Goods getGoodById(long id);
     /**
      * 根据id删除商品
      * @param id
      * @return
      */
-    void deleteGoods(long id);
+    void deleteGoods (long id);
 
+    /**
+     * 更新商品信息
+     * @param goods
+     * @return
+     */
+    void updateGoods (Goods goods);
+
+    /**
+     * 查询所有商品
+     * @return List<Goods>
+     */
+    List<Goods> getAllGoods ();
+
+    /**
+     * 根据id查询商品信息
+     *
+     * @param id
+     * @return Goods
+     */
+    Goods getGoods (long id);
+
+    /**
+     * 根据商品名字关键词模糊查询商品
+     *
+     * @param keywords
+     * @return List<Goods>
+     */
+    List<Goods> getGoodsLike (String keywords);
+
+    /**
+     * 根据商品类别查询商品
+     *
+     * @param typeId
+     * @return List<Goods>
+     */
+    List<Goods> getGoodsByTypeId (long typeId);
+
+    /**
+     * 根据商品类别统计商品数量
+     *
+     * @param typeId
+     * @return
+     */
+    int countByType (long typeId);
 
 }

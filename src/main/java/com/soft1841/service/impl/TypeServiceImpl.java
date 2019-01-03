@@ -1,5 +1,4 @@
 package com.soft1841.service.impl;
-import cn.hutool.db.Entity;
 import com.soft1841.dao.TypeDAO;
 import com.soft1841.entity.Type;
 import com.soft1841.service.TypeService;
@@ -14,18 +13,20 @@ import java.util.List;
  * 分类显示业务逻辑层的实现
  */
 public class TypeServiceImpl implements TypeService {
-    private TypeDAO typeDAO = (TypeDAO) DAOFactory.getTypeDAOInstance();
+    private TypeDAO typeDAO = DAOFactory.getTypeDAOInstance();
 
     @Override
-   public List<Entity> getAllTypes(){
-       List<Entity> typeList = new ArrayList<>();
-       try {
-           typeList = typeDAO.selectAllTypes();
-       }catch (SQLException e){
-           System.err.println("查询所有类别出现异常");
-       }
-       return typeList;
-   }
+    public List <Type> getAllTypes () {
+        List<Type> typeList = new ArrayList<>();
+        try {
+            //调用底层DAO的查询所有类别的方法，得到一个typeList，薄层封装
+            typeList = typeDAO.selectAllTypes();
+        } catch (SQLException e) {
+            //友好处理异常
+            System.err.println("查询所有类别出现异常!");
+        }
+        return typeList;
+    }
 
     @Override
     public Type getType (long id) {
@@ -58,5 +59,6 @@ public class TypeServiceImpl implements TypeService {
         } catch (SQLException e) {
             System.err.println("删除类别出现异常!");
         }
+
     }
 }

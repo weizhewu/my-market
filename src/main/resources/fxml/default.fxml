@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.soft1841.controller.BackMainController"
+            fx:controller="com.soft1841.controller.DefaultController"
             prefHeight="400.0" prefWidth="600.0">
-    <ImageView AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
-        <Image url="/img/download.jpg"
-        requestedWidth="500" requestedHeight="667"/>
-    </ImageView>
+    <!--<ImageView AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">-->
+        <!--<Image url="/img/download.jpg"-->
+        <!--requestedWidth="500" requestedHeight="667"/>-->
+    <!--</ImageView>-->
+<StackPane AnchorPane.topAnchor="60" AnchorPane.leftAnchor="100" >
+    <ImageView fx:id="goodImg" fitHeight="300" fitWidth="500"/>
+</StackPane>
 
 </AnchorPane>

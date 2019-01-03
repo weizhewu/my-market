@@ -1,48 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.soft1841.controller.CashiersController"
-            prefHeight="400.0" prefWidth="600.0">
-    <HBox alignment="BOTTOM_CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" spacing="10">
-        <Button  text="添加收银员" onAction="#addCashier" styleClass="blue-word"/>
-        <Button  text="导出数据" styleClass="blue-word"/>
+            fx:controller="com.soft1841.controller.CashiersController">
+    <HBox alignment="BOTTOM_CENTER" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" spacing="10">
+        <Button styleClass="blue-button-return" text="添加收银员" onAction="#insertCashier"/>
+        <TextField maxWidth="140" maxHeight="40" promptText="请输入关键词" fx:id="keywordsField" />
+        <Button styleClass="blue-button-return" text="搜索" />
     </HBox>
-    <HBox alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="10" spacing="10">
-        <TextField promptText="请输入关键词" fx:id="keywordsField"/>
-        <Button  text="搜索" styleClass="blue-word"/>
-    </HBox>
-    <TableView fx:id="cashierTable" prefWidth="1000"
-               AnchorPane.topAnchor="110" AnchorPane.leftAnchor="10">
-        <columns>
-            <TableColumn text="ID">
-                <cellValueFactory>
-                    <PropertyValueFactory property="id"/>
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn text="姓名">
-                <cellValueFactory>
-                    <PropertyValueFactory property="name"/>
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn text="编号">
-                <cellValueFactory>
-                    <PropertyValueFactory property="number"/>
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn text="密码">
-                <cellValueFactory>
-                    <PropertyValueFactory property="password"/>
-                </cellValueFactory>
-            </TableColumn>
-        </columns>
-    </TableView>
-
+    <ListView fx:id="cashierListView" prefHeight="300" AnchorPane.topAnchor="40" AnchorPane.leftAnchor="10" >
+    </ListView>
 </AnchorPane>

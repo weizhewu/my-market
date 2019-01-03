@@ -2,6 +2,8 @@ package com.soft1841.service;
 
 import com.soft1841.entity.Cashier;
 
+import java.util.List;
+
 public interface CashierService  {
     /**
      * @zhouguoqing
@@ -12,9 +14,15 @@ public interface CashierService  {
      */
     boolean login(String number, String password);
 
-    /**
-     * 根据工号查询收银员
-     * @return
-     */
-    Cashier getCashier(String number);
+    Long insertCashier(Cashier cashier);
+
+    void deleteCashierById(long id);
+
+    List<Cashier> selectAllCashier();
+
+    Cashier getCashierById(long id);
+
+    Cashier getCashierByNumber(String number);
+
+    List<Cashier> selectCashierLike(String keywords);
 }

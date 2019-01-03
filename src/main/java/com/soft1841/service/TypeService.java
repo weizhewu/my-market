@@ -1,6 +1,5 @@
 package com.soft1841.service;
 
-import cn.hutool.db.Entity;
 import com.soft1841.entity.Type;
 
 import java.util.List;
@@ -13,7 +12,7 @@ public interface TypeService {
      * 获取所有图书类别的功能
      * @return
      */
-    List<Entity> getAllTypes();
+    List <Type> getAllTypes();
 
     /**
      * 根据id查询类别

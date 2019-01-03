@@ -5,18 +5,21 @@
 <!--后台主界面布局-->
 <!--@author 岳凡-->
 <!--2018.12.24-->
+<?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.soft1841.controller.BackMainController">
     <top>
         <AnchorPane prefHeight="180" styleClass="blue-background">
             <Label text="智行超市后台管理" styleClass="blue-title"
-                   AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="5"/>
+                   AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="5"
+                   onMouseClicked="#listDefault"
+            />
         </AnchorPane>
     </top>
     <center>
         <!--分割面板-->
-        <SplitPane styleClass="blue-background">
+        <SplitPane >
             <AnchorPane maxWidth="200" minWidth="200">
                 <!--风琴面板-->
                 <Accordion>
@@ -38,7 +41,7 @@
 
                         <TitledPane text="人员管理" alignment="CENTER">
                             <VBox prefWidth="200" spacing="5" styleClass="blue-background">
-                                <Button text="收营员管理"  styleClass="blue-button-shout" onAction="#ListCashier"/>
+                                <Button text="收银员管理"  styleClass="blue-button-shout" onAction="#ListCashier"/>
                                 <Button text="会员管理" styleClass="blue-button-shout" onAction="#ListVIP"/>
                             </VBox>
                         </TitledPane>
@@ -57,11 +60,15 @@
             <!--右侧的主体内容部分，采用StackPane实现一种卡片式切换效果-->
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
                 <StackPane fx:id="backMainContainer" minWidth="1060">
+                    <AnchorPane>
                     <!--加载外部的fxml文件，显示默认的主体内容-->
                     <fx:include source="turnover.fxml"/>
                     <padding>
                         <Insets top="10" left="30" bottom="5" right="10"/>
                     </padding>
+                        <ImageView fx:id="goodImg" fitHeight="300" fitWidth="500"
+                                   AnchorPane.topAnchor="80" AnchorPane.leftAnchor="100" />
+                    </AnchorPane>
                 </StackPane>
                 <padding>
                     <Insets top="10"/>
@@ -69,4 +76,22 @@
             </ScrollPane>
         </SplitPane>
     </center>
+    <!--<center>-->
+        <!--<AnchorPane>-->
+            <!--<HBox spacing="5" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="10">-->
+                <!--<Button text="前台订单" styleClass="blue-button-shout" onAction="#frontDesk"/>-->
+                <!--<Button text="商品信息" styleClass="blue-button-shout" onAction="#ListGoods"/>-->
+                <!--<Button text="商品类管理" styleClass="blue-button-shout" onAction="#ListType"/>-->
+                <!--<Button text="退货管理" styleClass="blue-button-shout" />-->
+                <!--<Button text="换货管理" styleClass="blue-button-shout" />-->
+                <!--<Button text="收营员管理"  styleClass="blue-button-shout" onAction="#ListCashier"/>-->
+                <!--<Button text="会员管理" styleClass="blue-button-shout" onAction="#ListVIP"/>-->
+                <!--<Button text="商品统计" styleClass="blue-button-shout" onAction="#goodsStatistics"/>-->
+                <!--<Button text="营业额统计" styleClass="blue-button-shout" onAction="#turnover"/>-->
+                <!--<Button text="员工效益统计" styleClass="blue-button-shout" onAction="#employeeEffectiveness"/>-->
+            <!--</HBox>-->
+            <!--<ImageView fx:id="goodImg" fitHeight="300" fitWidth="500" AnchorPane.topAnchor="160" AnchorPane.leftAnchor="100" />-->
+        <!--</AnchorPane>-->
+        <!---->
+    <!--</center>-->
 </BorderPane>

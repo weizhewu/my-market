@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.soft1841.controller.GoodsController"
-            prefHeight="400.0" prefWidth="600.0">
-    <FlowPane fx:id="goodsPane" hgap="30" vgap="10"
-              AnchorPane.topAnchor="100"
-              AnchorPane.leftAnchor="20"
-              AnchorPane.rightAnchor="20"/>
+            fx:controller="com.soft1841.controller.GoodsController" styleClass="box-style2">
+    <HBox alignment="BOTTOM_CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" spacing="10">
+        <Button styleClass="blue-button-return" text="添加商品" onMouseClicked="#newGoodsStage" />
+        <Button styleClass="blue-button-return" text="导出数据"/>
+    </HBox>
+    <HBox alignment="CENTER" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="10" spacing="10">
+        <ComboBox promptText="选择商品类别" styleClass="text-field-small-radius" fx:id="typeComboBox" prefWidth="400"/>
+        <TextField promptText="请输入关键词" styleClass="text-field-large-radius" fx:id="keywordsField" AnchorPane.leftAnchor="800"/>
+        <Button styleClass="search-button" text="搜索" onAction="#search" fx:id="09"/>
+    </HBox>
+    <TableView fx:id="goodsTable" prefWidth="800" prefHeight="700"
+               AnchorPane.topAnchor="110" AnchorPane.leftAnchor="10">
+        <columns>
+            <TableColumn text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="商品名">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="库存">
+                <cellValueFactory>
+                    <PropertyValueFactory property="stock"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="价格">
+                <cellValueFactory>
+                    <PropertyValueFactory property="price"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
 
 </AnchorPane>

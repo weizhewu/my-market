@@ -89,8 +89,4 @@ public class Goods {
                 ", discription='" + discription + '\'' +
                 '}';
     }
-
-    public long getLong(String id) {
-        return 0;
-    }
 }
